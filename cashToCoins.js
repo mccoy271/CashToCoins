@@ -1,33 +1,31 @@
-const dollarAmount = 12.18;
+const dollarAmountInput = 12.10;
+var dollarAmount = dollarAmountInput * 100;
 
 const coins = {
-    pennies: .01,
-    nickles: .05,
-    dimes: .10,
-    quarters: .25
+    pennies: 1,
+    nickles: 5,
+    dimes: 10,
+    quarters: 25
 }
 // Converting 12.10 to coins
-let convertedPennies = Math.floor(dollarAmount/coins.pennies);//1210
-let convertedNickles = Math.floor(dollarAmount/coins.nickles);//241
-let convertedDimes = Math.floor(dollarAmount/coins.dimes);//120
 let convertedQuarters = Math.floor(dollarAmount/coins.quarters);//48
 
 // Finding how many quarters are in dollarAmount
 let quartersInAmount = convertedQuarters;
 
-let remainingAmount = dollarAmount - (quartersInAmount * coins.quarters);
+let remainingAmount = dollarAmount  - (quartersInAmount * coins.quarters);
 
-    dimesInAmount = Math.floor(remainingAmount / coins.dimes);
+let dimesInAmount = Math.floor(remainingAmount / coins.dimes);
 
-    remainingAmount = remainingAmount - (dimesInAmount * coins.dimes);
+remainingAmount = remainingAmount - (dimesInAmount * coins.dimes);
 
-    nicklesInAmount = Math.floor(remainingAmount / coins.nickles);
+let nicklesInAmount = Math.floor(remainingAmount / coins.nickles);
 
-    remainingAmount = remainingAmount - (nicklesInAmount * coins.nickles);
+remainingAmount = remainingAmount - (nicklesInAmount * coins.nickles);
 
-    penniesInAmount = Math.round(remainingAmount / coins.pennies);
+let penniesInAmount = Math.floor(remainingAmount / coins.pennies);
 
-    remainingAmount = remainingAmount - (penniesInAmount * coins.pennies);
+remainingAmount = remainingAmount - (penniesInAmount * coins.pennies);
 
 
 const piggyBank = {
